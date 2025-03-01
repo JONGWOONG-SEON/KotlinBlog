@@ -35,6 +35,13 @@ dependencies {
     //implementation("org.springframework.boot:spring-boot-starter-websocket")
     //testImplementation("org.springframework.security:spring-security-test")
     //testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
+    implementation("io.github.serpro69:kotlin-faker:2.0.0-rc.9")
+    // https://mvnrepository.com/artifact/com.github.gavlyukovskiy/p6spy-spring-boot-starter
+    implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.2")
+// https://mvnrepository.com/artifact/io.github.oshai/kotlin-logging
+    implementation("io.github.oshai:kotlin-logging:7.0.3")
+
+
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-validation")
