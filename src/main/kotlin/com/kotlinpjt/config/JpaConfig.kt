@@ -13,7 +13,7 @@ import java.util.*
 
 @Configuration
 @EnableJpaAuditing
-class JpaConfig {
+class LoggingConfig {
 
     @Configuration
     class P6spyConfig {

@@ -3,6 +3,7 @@ package com.kotlinpjt.config
 import com.kotlinpjt.domain.member.Member
 import io.github.serpro69.kfaker.faker
 import com.kotlinpjt.domain.member.MemberRepository
+import com.kotlinpjt.domain.member.MemberSaveReq
 import com.kotlinpjt.domain.member.Role
 import io.github.oshai.kotlinlogging.KotlinLogging
 import org.springframework.boot.context.event.ApplicationReadyEvent
@@ -20,13 +21,19 @@ class InitConfig(
     @EventListener(ApplicationReadyEvent::class)
     private fun init(){
 
+        val members = mutableListOf<Member>()
 
-        val member = Member(
-                email  = faker.internet.safeEmail(),
-                password = "1234",
-                role = Role.USER
-        )
-        log.info {"Insert $member"}
-        memberRepository.save(member)
+        for (i in 1 .. 100) {
+            val member = generateMember()
+            log.info { "Insert $member" }
+        }
+        memberRepository.saveAll(members)
     }
+
+    private fun generateMember(): Member = MemberSaveReq (
+        email = faker.internet.safeEmail(),
+        password = "1234",
+        role = Role.USER,
+        ).toEntity()
+
 }
