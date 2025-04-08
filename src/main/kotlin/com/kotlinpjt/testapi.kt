@@ -1,4 +1,4 @@
 package com.kotlinpjt
 
-class api {
+class testapi {
 }

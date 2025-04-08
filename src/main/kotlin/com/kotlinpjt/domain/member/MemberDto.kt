@@ -4,12 +4,19 @@ data class MemberSaveReq (
     val email:String,
     val password:String,
     val role:Role
-){
-    fun toEntity (): Member{
-        return Member(
-            email = this.email,
-            password = this.password,
-            role = this.role,
-        )
-    }
+)
+
+fun MemberSaveReq.toEntity(): Member{
+    return Member(
+        email = this.email,
+        password = this.password,
+        role = this.role,
+    )
 }
+
+data class MemberRes(
+    val id:Long,
+    val email:String,
+    val password:String,
+    val role:Role
+)
